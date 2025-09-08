@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AAF65BD72E6F076100C4A871 /* OPPWAMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */; };
-		AAF65BD82E6F076100C4A871 /* OPPWAMobile.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AAF65BD92E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */; };
-		AAF65BDA2E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AAF65BDE2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */; };
-		AAF65BDF2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7B4C08D2E6F1F31006E6921 /* OPPWAMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4C08C2E6F1F31006E6921 /* OPPWAMobile.xcframework */; };
+		B7B4C08E2E6F1F31006E6921 /* OPPWAMobile.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4C08C2E6F1F31006E6921 /* OPPWAMobile.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7B4C0902E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4C08F2E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework */; };
+		B7B4C0912E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4C08F2E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7B4C0932E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4C0922E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework */; };
+		B7B4C0942E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4C0922E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,9 +22,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AAF65BDA2E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Embed Frameworks */,
-				AAF65BDF2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Embed Frameworks */,
-				AAF65BD82E6F076100C4A871 /* OPPWAMobile.xcframework in Embed Frameworks */,
+				B7B4C08E2E6F1F31006E6921 /* OPPWAMobile.xcframework in Embed Frameworks */,
+				B7B4C0912E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework in Embed Frameworks */,
+				B7B4C0942E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,9 +33,9 @@
 
 /* Begin PBXFileReference section */
 		AA0A0CE32E6F06FB00A70EE8 /* HyperPaymentDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperPaymentDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile.xcframework; path = "../../../Downloads/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3 2/OPPWAMobile.xcframework"; sourceTree = "<group>"; };
-		AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:74N8742JFG:n software, Inc."; lastKnownFileType = wrapper.xcframework; name = ipworks3ds_sdk_9048.xcframework; path = "../../../Downloads/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3 2/ipworks3ds_sdk_9048.xcframework"; sourceTree = "<group>"; };
-		AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile_MSA.xcframework; path = "../../../Downloads/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3/Demo/OPPWAMobile_MSA.xcframework"; sourceTree = "<group>"; };
+		B7B4C08C2E6F1F31006E6921 /* OPPWAMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile.xcframework; path = "../Hyperpay SDK_v7.2.3/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3/OPPWAMobile.xcframework"; sourceTree = "<group>"; };
+		B7B4C08F2E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile_MSA.xcframework; path = "../Hyperpay SDK_v7.2.3/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3/Demo/OPPWAMobile_MSA.xcframework"; sourceTree = "<group>"; };
+		B7B4C0922E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:74N8742JFG:n software, Inc."; lastKnownFileType = wrapper.xcframework; name = ipworks3ds_sdk_9048.xcframework; path = "../Hyperpay SDK_v7.2.3/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3/ipworks3ds_sdk_9048.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -64,9 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF65BD92E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Frameworks */,
-				AAF65BDE2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Frameworks */,
-				AAF65BD72E6F076100C4A871 /* OPPWAMobile.xcframework in Frameworks */,
+				B7B4C08D2E6F1F31006E6921 /* OPPWAMobile.xcframework in Frameworks */,
+				B7B4C0902E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework in Frameworks */,
+				B7B4C0932E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +93,9 @@
 		AAF65BD42E6F076100C4A871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */,
-				AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */,
-				AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */,
+				B7B4C0922E6F1F6D006E6921 /* ipworks3ds_sdk_9048.xcframework */,
+				B7B4C08F2E6F1F5B006E6921 /* OPPWAMobile_MSA.xcframework */,
+				B7B4C08C2E6F1F31006E6921 /* OPPWAMobile.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
