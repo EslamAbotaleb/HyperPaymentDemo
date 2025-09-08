@@ -23,7 +23,8 @@ class CheckoutViewModel: ObservableObject {
     
     func startPayment() {
         Request.requestCheckoutID(amount: Config.amount, currency: Config.currency) { checkoutID in
-            DispatchQueue.main.async {
+            Task {
+                @MainActor in
                 if let checkoutID = checkoutID {
                     print("✅ Got checkout ID:", checkoutID)
                     self.checkoutItem = CheckoutItem(checkoutId: checkoutID)
@@ -42,7 +43,8 @@ class CheckoutViewModel: ObservableObject {
         
         if t.type == .synchronous {
             Request.requestPaymentStatus(resourcePath: t.resourcePath ?? "") { statusResponse, error in
-                DispatchQueue.main.async {
+                Task {
+                    @MainActor in 
                     if let status = statusResponse {
                         self.resultText = "Payment status: \(status.resultCode) — \(status.resultDescription)"
                     } else {
