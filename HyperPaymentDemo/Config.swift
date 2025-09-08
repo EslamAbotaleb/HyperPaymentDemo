@@ -10,7 +10,7 @@ class Config: NSObject {
     static let internalTestMode = "INTERNAL"
     
     // MARK: - The payment brands for Ready-to-use UI
-    static let checkoutPaymentBrands = ["VISA", "MASTER", "MADA"]
+    static let checkoutPaymentBrands = ["VISA", "MASTER","MEEZA","AMEX","ARGENCARD","CENCOSUD", "MADA", "APPLEPAY"]
     
     // MARK: - The default payment brand for Payment Button
     static let paymentButtonBrand = "VISA"
