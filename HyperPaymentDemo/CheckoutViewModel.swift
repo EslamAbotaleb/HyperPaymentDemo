@@ -16,7 +16,7 @@ class CheckoutViewModel: ObservableObject {
     func makeCheckoutProvider(checkoutID: String) -> OPPCheckoutProvider? {
         let paymentProvider = OPPPaymentProvider(mode: .test) // .test or .live
         let settings = OPPCheckoutSettings()
-        settings.paymentBrands = ["VISA", "MASTER", "MADA"]
+        settings.paymentBrands = Config.checkoutPaymentBrands
         settings.shopperResultURL = "your-app-scheme://result"
         return OPPCheckoutProvider(paymentProvider: paymentProvider, checkoutID: checkoutID, settings: settings)
     }
