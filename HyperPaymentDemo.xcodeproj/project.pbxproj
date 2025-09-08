@@ -11,6 +11,8 @@
 		AAF65BD82E6F076100C4A871 /* OPPWAMobile.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAF65BD92E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */; };
 		AAF65BDA2E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AAF65BDE2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */; };
+		AAF65BDF2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +23,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				AAF65BDA2E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Embed Frameworks */,
+				AAF65BDF2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Embed Frameworks */,
 				AAF65BD82E6F076100C4A871 /* OPPWAMobile.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -32,11 +35,25 @@
 		AA0A0CE32E6F06FB00A70EE8 /* HyperPaymentDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperPaymentDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile.xcframework; path = "../../../Downloads/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3 2/OPPWAMobile.xcframework"; sourceTree = "<group>"; };
 		AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:74N8742JFG:n software, Inc."; lastKnownFileType = wrapper.xcframework; name = ipworks3ds_sdk_9048.xcframework; path = "../../../Downloads/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3 2/ipworks3ds_sdk_9048.xcframework"; sourceTree = "<group>"; };
+		AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OPPWAMobile_MSA.xcframework; path = "../../../Downloads/Hyperpay SDK_v7.2.3/iOS_Frameworks_7.2.3/Demo/OPPWAMobile_MSA.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AAF65BE92E6F14FB00C4A871 /* Exceptions for "HyperPaymentDemo" folder in "HyperPaymentDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AA0A0CE22E6F06FB00A70EE8 /* HyperPaymentDemo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AA0A0CE52E6F06FB00A70EE8 /* HyperPaymentDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AAF65BE92E6F14FB00C4A871 /* Exceptions for "HyperPaymentDemo" folder in "HyperPaymentDemo" target */,
+			);
 			path = HyperPaymentDemo;
 			sourceTree = "<group>";
 		};
@@ -48,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF65BD92E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework in Frameworks */,
+				AAF65BDE2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework in Frameworks */,
 				AAF65BD72E6F076100C4A871 /* OPPWAMobile.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +93,7 @@
 		AAF65BD42E6F076100C4A871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAF65BDD2E6F0C0B00C4A871 /* OPPWAMobile_MSA.xcframework */,
 				AAF65BD62E6F076100C4A871 /* ipworks3ds_sdk_9048.xcframework */,
 				AAF65BD52E6F076100C4A871 /* OPPWAMobile.xcframework */,
 			);
@@ -293,6 +312,7 @@
 				DEVELOPMENT_TEAM = W8LN286WQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyperPaymentDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,6 +347,7 @@
 				DEVELOPMENT_TEAM = W8LN286WQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyperPaymentDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
