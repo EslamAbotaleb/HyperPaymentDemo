@@ -3,8 +3,8 @@ import UIKit
 class Config: NSObject {
     
     // MARK: - The default amount and currency that are used for all payments
-    static let amount: Double = 49.99
-    static let currency: String = "EUR"
+    static let amount: Double = 1320
+    static let currency: String = "SR"
     static let paymentType: String = "PA"
     static let externalTestMode = "EXTERNAL"
     static let internalTestMode = "INTERNAL"

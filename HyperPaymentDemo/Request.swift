@@ -18,11 +18,12 @@ class Request: NSObject {
                                             paymentType: Config.paymentType,
                                             serverMode: .test,
                                             extraParameters: extraParamaters) { checkoutId, error in
-            if let checkoutId = checkoutId {
-                completion(checkoutId)
-            } else {
-                completion(nil)
-            }
+            completion("957BD0FA5BC53A4B07FD1CA340A28F58.uat01-vm-tx02")
+//            if let checkoutId = checkoutId {
+//                completion(checkoutId)
+//            } else {
+//                completion(nil)
+//            }
         }
     }
     

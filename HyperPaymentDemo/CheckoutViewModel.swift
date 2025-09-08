@@ -129,7 +129,10 @@ class CheckoutViewModel: ObservableObject {
                 }
             }
         } else {
+            /// this success  behave but difference type payment 
             resultText = "Async transaction — redirect URL: \(t.redirectURL?.absoluteString ?? "nil")"
+            
+            print(resultText)
         }
     }
 }

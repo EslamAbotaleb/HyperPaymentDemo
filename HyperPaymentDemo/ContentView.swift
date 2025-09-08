@@ -8,6 +8,7 @@
 import SwiftUI
 import OPPWAMobile
 import UIKit
+//        "id": "957BD0FA5BC53A4B07FD1CA340A28F58.uat01-vm-tx02",
 
 struct ContentView: View {
     @StateObject private var viewModel = CheckoutViewModel()
@@ -21,7 +22,7 @@ struct ContentView: View {
             }
         }
         .sheet(item: $viewModel.checkoutItem) { item in
-            if let provider = viewModel.makeCheckoutProvider(checkoutID: item.checkoutId) {
+            if let provider = viewModel.makeCheckoutProvider(checkoutID: "957BD0FA5BC53A4B07FD1CA340A28F58.uat01-vm-tx02") {
                 CheckoutPresenter(checkoutProvider: provider) { transaction in
                     viewModel.checkoutItem = nil
                     viewModel.handleTransaction(transaction)
