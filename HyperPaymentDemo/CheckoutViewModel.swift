@@ -12,91 +12,37 @@ import OPPWAMobile
 class CheckoutViewModel: ObservableObject {
     @Published var resultText: String = "No payment yet"
     @Published var checkoutItem: CheckoutItem? = nil
+    @Published var checkoutProvider: OPPCheckoutProvider? = nil
     
-    func makeCheckoutProvider(checkoutID: String) -> OPPCheckoutProvider? {
-        let paymentProvider = OPPPaymentProvider(mode: .test) // .test or .live
+    func makeCheckoutProvider(checkoutID: String, selectedMethod: String) -> OPPCheckoutProvider? {
+        let paymentProvider = OPPPaymentProvider(mode: .test)
         let settings = OPPCheckoutSettings()
-        settings.paymentBrands = Config.checkoutPaymentBrands
+        
+        // Only include the selected payment method
+        settings.paymentBrands = [selectedMethod]
+
         settings.shopperResultURL = "your-app-scheme://result"
 
-        // If we want Apple Pay to appear, configure a PKPaymentRequest and attach it.
-        if Config.checkoutPaymentBrands.contains("APPLEPAY") {
-            // quick runtime check: device & wallet availability
+        // Apple Pay setup (optional)
+        if selectedMethod == "APPLEPAY" {
             if PKPaymentAuthorizationController.canMakePayments() {
                 let paymentRequest = PKPaymentRequest()
-                paymentRequest.merchantIdentifier = "merchant.com.yourcompany.app" // <<-- replace with your merchant id
-                paymentRequest.countryCode = "US"               // set appropriate country code for your merchant
-                paymentRequest.currencyCode = Config.currency  // e.g. "USD" or "SAR"
-                // choose supported networks that your merchant accepts
-                paymentRequest.supportedNetworks = [
-                    .visa,
-                    .masterCard,
-                    .amex,
-                    .discover,
-                    .maestro,
-                    .mada           // available in modern iOS versions
-                ].compactMap { $0 } // keeps code safe if any network isn't available on older SDKs
-
-                // set merchant capabilities (3DS usually required)
+                paymentRequest.merchantIdentifier = "merchant.com.yourcompany.app"
+                paymentRequest.countryCode = "US"
+                paymentRequest.currencyCode = Config.currency
+                paymentRequest.supportedNetworks = [.visa, .masterCard, .mada].compactMap { $0 }
                 paymentRequest.merchantCapabilities = .threeDSecure
-
-                // item shown in Apple Pay sheet (label + amount)
-                paymentRequest.paymentSummaryItems = [
-                    PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(value: Config.amount))
-                ]
-
-                // assign to the SDK settings (this is the correct place to configure Apple Pay for OPP)
+                paymentRequest.paymentSummaryItems = [PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(value: Config.amount))]
                 settings.applePayPaymentRequest = paymentRequest
-
-                // optionally choose the Apple Pay button style shown in the checkout
-                settings.applePayType = .plain // or .plain / .setUp / .donate etc.
-            } else {
-                print("Apple Pay not available on this device or no cards added in Wallet")
+                settings.applePayType = .plain
             }
         }
 
-        return OPPCheckoutProvider(paymentProvider: paymentProvider, checkoutID: checkoutID, settings: settings)
+        let checkoutProvider = OPPCheckoutProvider(paymentProvider: paymentProvider, checkoutID: checkoutID, settings: settings)
+        self.checkoutProvider = checkoutProvider
+        return checkoutProvider
     }
-    
-// MARK: - Old Implment For Function makeCheckoutProvider
-  /*
-   func makeCheckoutProvider(checkoutID: String) -> OPPCheckoutProvider? {
-       let paymentProvider = OPPPaymentProvider(mode: .test) // .test or .live
-//        let settings = OPPCheckoutSettings()
-//        settings.paymentBrands = Config.checkoutPaymentBrands
-       let settings = OPPCheckoutSettings()
-       settings.paymentBrands = Config.checkoutPaymentBrands
-       // General colors of the checkout UI
-       settings.theme.primaryBackgroundColor = UIColor.white
-       settings.theme.primaryForegroundColor = UIColor.black
-       settings.theme.confirmationButtonColor = UIColor.orange
-       settings.theme.confirmationButtonTextColor = UIColor.white
-       settings.theme.errorColor = UIColor.red
-       
-//        settings.theme.activityIndicatorStyle = .gray;
-       settings.theme.separatorColor = UIColor.lightGray
 
-       // Navigation bar customization
-       settings.theme.navigationBarTintColor = UIColor.white
-       settings.theme.navigationBarBackgroundColor = UIColor.orange
-       settings.theme.navigationBarTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-       settings.theme.navigationItemTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-       settings.theme.cancelBarButtonImage = UIImage(named: "shopping_cart_black_icon")
-
-       // Payment brands list customization
-       settings.theme.cellHighlightedBackgroundColor = UIColor.orange
-       settings.theme.cellHighlightedTextColor = UIColor.white
-
-       // Fonts customization
-       settings.theme.primaryFont = UIFont.systemFont(ofSize: 14.0)
-       settings.theme.secondaryFont = UIFont.systemFont(ofSize: 12.0)
-       settings.theme.confirmationButtonFont = UIFont.systemFont(ofSize: 15.0)
-       settings.theme.errorFont = UIFont.systemFont(ofSize: 12.0)
-       settings.shopperResultURL = "your-app-scheme://result"
-       return OPPCheckoutProvider(paymentProvider: paymentProvider, checkoutID: checkoutID, settings: settings)
-   }
-   
-   */
     func startPayment() {
         Request.requestCheckoutID(amount: Config.amount, currency: Config.currency) { checkoutID in
             Task {

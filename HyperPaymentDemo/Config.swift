@@ -3,14 +3,14 @@ import UIKit
 class Config: NSObject {
     
     // MARK: - The default amount and currency that are used for all payments
-    static let amount: Double = 1320
-    static let currency: String = "SR"
+    static let amount: Double = 49.49
+    static let currency: String = "EUR"
     static let paymentType: String = "PA"
     static let externalTestMode = "EXTERNAL"
     static let internalTestMode = "INTERNAL"
     
     // MARK: - The payment brands for Ready-to-use UI
-    static let checkoutPaymentBrands = ["VISA", "MASTER","MEEZA","AMEX","ARGENCARD","CENCOSUD", "MADA", "APPLEPAY"]
+    static let checkoutPaymentBrands = ["VISA", "MASTER", "MADA"]
     
     // MARK: - The default payment brand for Payment Button
     static let paymentButtonBrand = "VISA"

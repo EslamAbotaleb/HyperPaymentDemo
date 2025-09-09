@@ -12,25 +12,20 @@ import UIKit
 
 struct ContentView: View {
     @StateObject private var viewModel = CheckoutViewModel()
-    
+    @State private var showPaymentMethods = false
+
     var body: some View {
         VStack(spacing: 20) {
             Text(viewModel.resultText).padding()
 
             Button("Start payment") {
-                viewModel.startPayment()
+                showPaymentMethods = true
             }
         }
-        .sheet(item: $viewModel.checkoutItem) { item in
-            if let provider = viewModel.makeCheckoutProvider(checkoutID: "957BD0FA5BC53A4B07FD1CA340A28F58.uat01-vm-tx02") {
-                CheckoutPresenter(checkoutProvider: provider) { transaction in
-                    viewModel.checkoutItem = nil
-                    viewModel.handleTransaction(transaction)
-                }
-            } else {
-                Text("Failed to create checkout provider")
-            }
+        .sheet(isPresented: $showPaymentMethods) {
+            PaymentMethodSelectionView(
+                isPresented: $showPaymentMethods, viewModel: viewModel 
+            )
         }
     }
 }
-

@@ -46,9 +46,9 @@ class Utils: NSObject {
         let jsConfig = [ "onReady" :  "function(){$(\"button.wpwl-button-brand\").hide();setTimeout(function() { wpwl.executePayment(\"wpwl-container-virtualAccount-AFTERPAY_PACIFIC\"); }, 1500);}" ]
         let afterpayConfig = OPPWpwlOptions.initWithConfiguration(afterpayDict, jsFunctions: jsConfig)
         checkoutSettings.wpwlOptions["AFTERPAY_PACIFIC"] = afterpayConfig
-//        if (Config.customControllersEnabled) {
-//            checkoutSettings.customController(OPPViewController.cardDetails, withUiController: CardViewController.init(nibName: "CardViewController", bundle: nil))
-//        }
+        if (Config.customControllersEnabled) {
+            checkoutSettings.customController(OPPViewController.cardDetails, withUiController: CardViewController.init(nibName: "CardViewController", bundle: nil))
+        }
         
         return checkoutSettings
     }
